@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Section - Adeel Ahsan</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0px;
+      padding: 0px; /* Adjusted to add padding around the content */
+    }
+    .section__title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .section__subtitle {
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      color: #800080;
+      margin-bottom: 20px;
+    }
+    .blogs__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px; /* Adds padding inside the container, making space around the first and last elements */
+      box-sizing: border-box; /* Ensures padding does not add to the total width */
+    }
+    .blog__content {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin: 10px; /* Adds margin to each blog content for better spacing and visibility */
+    }
+    .blog__content img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog__data {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .blog__title {
+      font-size: 18px;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+    .button {
+      background-color: #be93c1;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center;
+      margin-top: auto;
+      width: auto;
+      align-self: center;
+    }
+    .button--flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .button__icon {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Publications.html">Publications</a></li>
+        <li><a href="Blogs.html">Blogs</a></li> <!-- Removed the `class="active"` from here -->
+        <li><a href="pdfs/AdeelCV.pdf" download>CV</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://scholar.google.com/citations?user=LCDpnz8AAAAJ&hl=en"><i class="fas fa-graduation-cap"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/adeelahsaanawan/"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://www.instagram.com/aeronautyy/"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.youtube.com/@aeronautyy"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="https://www.upwork.com/freelancers/adeela63"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" style="fill: #a8a9ae;"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM270.8 274.3c5.2 8.4 23.6 29.9 51.5 29.9v0c25.2 0 44.9-20.2 44.9-49.7s-19.4-49.7-44.9-49.7s-44.9 16.7-51.5 69.5zm-26.7-41.8c7.3-30.5 32.7-60.1 78.2-60.1l0 0c45.1 0 80.9 35.2 80.9 82.2s-35.9 81.9-80.9 81.9c-.6 0-1.1 0-1.7 0c-.5 0-1.1 0-1.6 0h-.1c-14.5-.5-28.7-4.8-40.9-12.6c-4.7-2.8-9.1-6-13.4-9.5l-12.8 78.4H214.9l19.4-110.6c-20.8-29.1-31.6-62.4-36.2-79.7V255c0 48-30.5 81.5-74.2 81.5c-22 0-41-8-54.8-23.3c-13.4-14.8-20.8-35.5-20.8-58.3V176.8H84.5l-.3 78.2c0 28.4 14.5 49.3 39.8 49.3s38.2-20.9 38.2-49.3V176.8h62.8c4.8 19.3 10.9 40.1 19.2 55.6z"/></svg></a></li>
+        <li><a href="https://calendly.com/aeronautyy"><i class="fas fa-calendar-alt"></i></a></li>
+        <li><a href="https://medium.com/@adeelahsaanawan"><i class="fab fa-medium-m"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="section" id="blog">
+  <h2 class="section__title">Blog</h2>
+  <div class="blogs__container">
+ <!-- Blog 1 -->
+    <div class="blog__content">
+      <img src="./img/ADRCROBOT.jpg" alt="Active Disturbance Rejection Control of Robots">
+      <div class="blog__data">
+        <h3 class="blog__title">Active Disturbance Rejection control of Robots</h3>
+        <a href="https://medium.com/@adeelahsaanawan/active-disturbance-rejection-control-of-robots-e91c92764d6d" class="button button--flex">
+          Read More<i class="uil uil-arrow-right button__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Blog 2 -->
+    <div class="blog__content">
+      <img src="./img/smart.jpg" alt="Sensors in Smart Watches">
+      <div class="blog__data">
+        <h3 class="blog__title">Sensors in Smart Watches</h3>
+        <a href="https://medium.com/@adeelahsaanawan/the-sensors-in-smartwatches-901c8e120010" class="button button--flex">
+          Read More<i class="uil uil-arrow-right button__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Blog 3 -->
+    <div class="blog__content">
+      <img src="./img/motion.jpg" alt="Why is Motion Control Important for Robot Innovation?">
+      <div class="blog__data">
+        <h3 class="blog__title">Why is Motion Control Important for Robot Innovation?</h3>
+        <a href="https://medium.com/@adeelahsaanawan/why-is-motion-control-important-for-robot-innovation-ea24aaae15c8" class="button button--flex">
+          Read More<i class="uil uil-arrow-right button__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Blog 4 -->
+    <div class="blog__content">
+      <img src="./img/agv.jpg" alt="Robotic Systems in Automated Guided Vehicles">
+      <div class="blog__data">
+        <h3 class="blog__title">Robotic Systems in Automated Guided Vehicles</h3>
+        <a href="https://medium.com/@adeelahsaanawan/robotic-systems-in-automated-guided-vehicles-9ebd21624832" class="button button--flex">
+          Read More<i class="uil uil-arrow-right button__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Blog 5 -->
+    <div class="blog__content">
+      <img src="./img/AGI.jpg" alt="Robots with General Intelligence; Is it Possible?">
+      <div class="blog__data">
+        <h3 class="blog__title">Robots with General Intelligence; Is it Possible?</h3>
+        <a href="https://medium.com/@adeelahsaanawan/robots-with-general-intelligence-is-it-possible-d8796240b219" class="button button--flex">
+          Read More<i class="uil uil-arrow-right button__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Blog 6 -->
+    <div class="blog__content">
+      <img src="./img/MPC.png" alt="Unleashing the Power of Model Predictive Control in Industrial Applications">
+      <div class="blog__data">
+        <h3 class="blog__title">Model Predictive Control in Industrial Applications</h3>
+        <a href="https://medium.com/@adeelahsaanawan/unleashing-the-power-of-model-predictive-control-in-industrial-applications-16528248b604" class="button button--flex">
+          Read More<i class="uil uil-arrow-right button__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Blog 7 -->
+    <div class="blog__content">
+      <img src="./img/SMC.png" alt="Sliding Mode Control: An Overview">
+      <div class="blog__data">
+        <h3 class="blog__title">Sliding Mode Control: An Overview</h3>
+        <a href="https://medium.com/@adeelahsaanawan/sliding-mode-control-an-overview-2c5c1783fb69" class="button button--flex">
+          Read More<i class="uil uil-arrow-right button__icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>

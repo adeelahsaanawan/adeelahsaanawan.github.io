@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publication Citation with Image</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0px;
+  }
+  .year-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .year-title {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border-bottom: 2px solid #666;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    color: #800080;
+  }
+  .publication-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10%;
+  }
+  .publication-image {
+    flex-shrink: 0;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #ddd;
+  }
+  .publication-image img {
+    width: 500px;
+    height: auto;
+  }
+  .publication-text {
+    font-size: 18px;
+    text-align: justify;
+  }
+  .citation-options {
+    margin-top: 10px;
+  }
+  .cite-button, .bibtex-button, .link-button {
+    background-color: #be93c1;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .dialog-box {
+    display: none;
+    position: fixed;
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Publications.html">Publications</a></li>
+        <li><a href="Blogs.html">Blogs</a></li>
+        <li><a href="pdfs/AdeelsCV.pdf" download>CV</a></li>  
+      </ul>
+      <ul class="nav navbar-nav navbar-right social-icons">
+        <li><a href="https://scholar.google.com/citations?user=LCDpnz8AAAAJ&hl=en"><i class="fas fa-graduation-cap"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/adeelahsaanawan/"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://www.instagram.com/aeronautyy/"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.youtube.com/@aeronautyy"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="https://www.upwork.com/freelancers/adeela63"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" style="fill: #a8a9ae;"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM270.8 274.3c5.2 8.4 23.6 29.9 51.5 29.9v0c25.2 0 44.9-20.2 44.9-49.7s-19.4-49.7-44.9-49.7s-44.9 16.7-51.5 69.5zm-26.7-41.8c7.3-30.5 32.7-60.1 78.2-60.1l0 0c45.1 0 80.9 35.2 80.9 82.2s-35.9 81.9-80.9 81.9c-.6 0-1.1 0-1.7 0c-.5 0-1.1 0-1.6 0h-.1c-14.5-.5-28.7-4.8-40.9-12.6c-4.7-2.8-9.1-6-13.4-9.5l-12.8 78.4H214.9l19.4-110.6c-20.8-29.1-31.6-62.4-36.2-79.7V255c0 48-30.5 81.5-74.2 81.5c-22 0-41-8-54.8-23.3c-13.4-14.8-20.8-35.5-20.8-58.3V176.8H84.5l-.3 78.2c0 28.4 14.5 49.3 39.8 49.3s38.2-20.9 38.2-49.3V176.8h62.8c4.8 19.3 10.9 40.1 19.2 55.6z"/></svg></a></li>
+        <li><a href="https://calendly.com/aeronautyy"><i class="fas fa-calendar-alt"></i></a></li>
+        <li><a href="https://medium.com/@adeelahsaanawan"><i class="fab fa-medium-m"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Example Year Section -->
+<div class="year-section">
+  <div class="year-title"><span>Publications</span> <span style="color: #800080;"></span></div>
+  <div class="publication-container">
+    <div class="publication-image">
+      <img src="./img/ADRC.jpeg" alt="Related Image">
+    </div>
+    <div class="publication-text">
+      M. A. Ahsan, H. Zeeshan Iqbal Khan, J. Rajput and J. Riaz, "Active Disturbance Rejection Control of a Quadrotor: A Comparative Study," 2022 19th International Bhurban Conference on Applied Sciences and Technology (IBCAST), Islamabad, Pakistan, 2022, pp. 444-450, doi: 10.1109/IBCAST54850.2022.9990161.
+      <div class="citation-options">
+        <button class="cite-button" onclick="showCite()">Cite</button>
+        <button class="bibtex-button" onclick="showBibTeX()">Generate BibTeX</button>
+        <a href="https://ieeexplore.ieee.org/document/9990161" target="_blank" class="link-button">Link to Paper</a>
+      </div>
+    </div>
+  </div>
+  <!-- Repeat for other publications within the year -->
+</div>
+
+<!-- Dialog Boxes -->
+<div id="citeBox" class="dialog-box">
+  <p>M. A. Ahsan, H. Zeeshan Iqbal Khan, J. Rajput and J. Riaz, "Active Disturbance Rejection Control of a Quadrotor: A Comparative Study," 2022 19th International Bhurban Conference on Applied Sciences and Technology (IBCAST), Islamabad, Pakistan, 2022, pp. 444-450, doi: 10.1109/IBCAST54850.2022.9990161.</p>
+  <button onclick="closeDialog()">Close</button>
+</div>
+
+<div id="bibtexBox" class="dialog-box">
+  <pre>@INPROCEEDINGS{9990161,
+  author={Ahsan, Muhammad Adeel and Zeeshan Iqbal Khan, Hafiz and Rajput, Jahanzeb and Riaz, Jamshed},
+  booktitle={2022 19th International Bhurban Conference on Applied Sciences and Technology (IBCAST)}, 
+  title={Active Disturbance Rejection Control of a Quadrotor: A Comparative Study}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={444-450},
+  keywords={Robust control;Uncertainty;Monte Carlo methods;PI control;Simulation;Observers;Robustness;Active Disturbance Rejection Control;Quadrotor;LADRC;ADRC;NLADRC;PID},
+  doi={10.1109/IBCAST54850.2022.9990161}
+}</pre>
+  <button onclick="closeDialog()">Close</button>
+</div>
+
+<script>
+function showCite() {
+  document.getElementById('citeBox').style.display = 'block';
+}
+
+function showBibTeX() {
+  document.getElementById('bibtexBox').style.display = 'block';
+}
+
+function closeDialog() {
+  document.getElementById('citeBox').style.display = 'none';
+  document.getElementById('bibtexBox').style.display = 'none';
+}
+</script>
+
+</body>
+</html>

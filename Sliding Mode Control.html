@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Mode Control: An Overview</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        h2 {
+            color: #006400;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .important {
+            color: #D2691E;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Sliding Mode Control: An Overview</h1>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                Sliding Mode Control (SMC) is a robust control strategy that deals with the uncertainty and disturbances within dynamic systems. Its principle lies in driving the system's state to a predefined sliding surface and maintaining it on this surface despite external disturbances and system parameter variations.
+            </p>
+        </section>
+        <section>
+            <h2>Mathematical Formulation</h2>
+            <p>
+                Consider a general dynamical system described by the following differential equation:
+            </p>
+            <p>\[
+                \frac{dx}{dt} = f(x, u)
+            \]\</p>
+            <p>where</p>
+            <ul>
+                <li><span class="important">\(x\)</span> represents the state of the system,</li>
+                <li><span class="important">\(u\)</span> is the control input, and</li>
+                <li>\(f\) is a function of the system's dynamics.</li>
+            </ul>
+            <p>
+                The goal of SMC is to design a control law \(u\) that forces the system's trajectory to reach and stay on a predefined sliding surface \(S(x) = 0\), where \(S(x)\) is a continuous function of the system state \(x\).
+            </p>
+        </section>
+        <section>
+            <h2>Design of Sliding Surface</h2>
+            <p>
+                The sliding surface is designed based on the system's desired dynamics and is given by:
+            </p>
+            <p>\[
+                S(x) = Cx
+            \]\</p>
+            <p>where \(C\) is a matrix chosen such that the dynamics of the system on the sliding surface have desired properties (e.g., stability, fast response).</p>
+        </section>
+        <section>
+            <h2>Control Law</h2>
+            <p>
+                The control law in sliding mode control can be defined as:
+            </p>
+            <p>\[
+                u = -k \cdot \text{sign}(S(x))
+            \]\</p>
+            <p>where \(k\) is a positive constant, and \(\text{sign}()\) denotes the signum function, ensuring the system's trajectory reaches the sliding surface in finite time.</p>
+        </section>
+        <section>
+            <h2>Conclusion</h2>
+            <p>
+                Sliding Mode Control is a powerful control technique for dealing with uncertainties and disturbances in dynamic systems. Its ability to maintain system performance despite external disturbances makes it suitable for a wide range of applications in engineering and science.
+            </p>
+        </section>
+    </article>
+</body>
+</html>
